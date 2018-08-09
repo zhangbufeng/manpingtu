@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+       position: absolute;
+        top: 20px;
+        height: 20px;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+    <!--<div class="box"></div>-->
+</body>
+</html>
+<script>
+    window.onload=function () {
+        function rgb() {
+        let a=Math.floor(Math.random()*256);
+        let b=Math.floor(Math.random()*256);
+        let c=Math.floor(Math.random()*256);
+        return "rgb("+a+","+b+","+c+")";
+        }
+        // box.style.backgroundColor=rgb();
+        for(let i=0;i<100;i++){
+            let w=Math.floor(Math.random()*30+30);
+            let top=Math.floor(Math.random()*(innerHeight-w));
+            let left=Math.floor(Math.random()*(innerWidth-w));
+            let color=rgb();
+            let div=document.createElement("div");
+            // let box=document.querySelector(".box");
+            div.style.width=w+"px";
+            div.style.height=w+"px";
+            div.style.top=top+"px";
+            div.style.left=left+"px";
+            div.style.backgroundColor=color;
+            div.classList.add("box");
+            document.body.appendChild(div);
+        }
+
+
+    }
+
+</script>
